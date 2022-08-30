@@ -4,6 +4,7 @@ import PackageDescription
 let package = Package(
     name: "SourceryPlugins",
     products: [
+        .plugin(name: "SourceryCommand", targets: ["SourceryCommand"])
     ],
     targets: [
         .plugin(
