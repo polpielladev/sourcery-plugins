@@ -10,5 +10,7 @@ struct SourceryCommand: CommandPlugin {
         }
         
         let sourceryExecutable = try context.tool(named: "sourcery")
+        let sourceryURL = URL(fileURLWithPath: sourceryExecutable.path.string)
+
     }
 }
