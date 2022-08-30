@@ -8,5 +8,7 @@ struct SourceryCommand: CommandPlugin {
             Diagnostics.error("Could not find config at: \(configFilePath)")
             return
         }
+        
+        let sourceryExecutable = try context.tool(named: "sourcery")
     }
 }
