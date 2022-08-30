@@ -6,8 +6,5 @@ let package = Package(
     products: [
     ],
     targets: [
-        .target(
-            name: "SourceryPlugins",
-            dependencies: [])
     ]
 )
