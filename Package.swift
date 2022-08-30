@@ -6,5 +6,11 @@ let package = Package(
     products: [
     ],
     targets: [
+        .plugin(
+            name: "SourceryCommand",
+            capability: .command(
+                intent: .custom(verb: "sourcery-code-generation", description: "Generates Swift files from a given set of inputs")
+            )
+        )
     ]
 )
