@@ -11,6 +11,11 @@ struct SourceryCommand: CommandPlugin {
         
         let sourceryExecutable = try context.tool(named: "sourcery")
         let sourceryURL = URL(fileURLWithPath: sourceryExecutable.path.string)
-
+        
+        let process = Process()
+        process.executableURL = sourceryURL
+        
+        try process.run()
+        process.waitUntilExit()
     }
 }
