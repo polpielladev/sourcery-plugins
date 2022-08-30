@@ -1,6 +1,7 @@
 import PackagePlugin
 import Foundation
 
+@main
 struct SourceryCommand: CommandPlugin {
     func performCommand(context: PluginContext, arguments: [String]) async throws {
         let configFilePath = context.package.directory.appending(subpath: ".sourcery.yml").string
