@@ -6,7 +6,7 @@ struct SourceryCommand: CommandPlugin {
     func performCommand(context: PluginContext, arguments: [String]) async throws {
         let configFilePath = context.package.directory.appending(subpath: ".sourcery.yml").string
         guard FileManager.default.fileExists(atPath: configFilePath) else {
-            Diagnostics.error("Could not find config at: \(configFilePath)")
+            Diagnostics.error("🤷‍♂️ Could not find config at: \(configFilePath)")
             return
         }
         
@@ -21,5 +21,10 @@ struct SourceryCommand: CommandPlugin {
         
         try process.run()
         process.waitUntilExit()
+        
+        let gracefulExit = process.terminationReason == .exit && process.terminationStatus == 0
+        if !gracefulExit {
+            Diagnostics.error("🛑 The plugin execution failed")
+        }
     }
 }
