@@ -2,7 +2,7 @@
 
 Use [Sourcery](https://github.com/krzysztofzablocki/Sourcery) as a code generator in your project as a Swift package's command plugin.
 
-See: [Blog post explaining how this works[(https://www.polpiella.dev/sourcery-swift-package-command-plugin/)
+See: [Blog post explaining how this works](https://www.polpiella.dev/sourcery-swift-package-command-plugin/)
 
 ## Usage
 
